@@ -13,6 +13,9 @@ connectDb();
 app.use(express.json())
 app.use(cors())
 app.use("/auth",authRoutes)
+app.get("/get",(req,res)=>{
+    res.send("getting")
+})
 
 app.listen(port, ()=>{
     console.log(`Server is running on port http://localhost:${port}`);
