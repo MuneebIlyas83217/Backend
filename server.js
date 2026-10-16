@@ -1,5 +1,5 @@
 import express from "express";
-import authRoutes from "./routes/auth.routes.js"
+import authRoutes from "./routes/auth.routes.js" 
 import connectDb from "./config/db.js";
 import dotenv from "dotenv";
 import cors from "cors";
