@@ -10,6 +10,12 @@ const port = 3000;
 
 const app = express();
 
+// ⚠️ TEMPORARY DEBUG ROUTE — REMOVE AFTER VERIFYING
+// This confirms .env is being loaded without exposing the actual URI.
+app.get("/debug", (req, res) => {
+  res.json({ dotenvLoaded: !!process.env.MONGO_URI });
+});
+
 dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".env") });
 connectDb();
 app.use(express.json())
