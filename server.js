@@ -3,12 +3,14 @@ import authRoutes from "./routes/auth.routes.js"
 import connectDb from "./config/db.js";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const port = 3000;
 
 const app = express();
 
-dotenv.config();
+dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".env") });
 connectDb();
 app.use(express.json())
 app.use(cors())
